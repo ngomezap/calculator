@@ -1,0 +1,95 @@
+
+@font-face{
+    font-family:'digital-clock-font';
+    src: url('./fonts/digital-7.ttf');
+}
+
+body{
+    background-color: darkturquoise;
+}
+
+h1{
+    font-size: 55px;
+    text-align: center;
+    font-family: "digital-clock-font";
+}
+
+#container{
+    border-radius: 10px;
+    background-color: grey;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    gap: 10px;
+    width: 400px;
+    height: 60vh;
+    padding: 20px;
+    box-shadow: 10px 10px;
+}
+
+#buttons{
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#buttons button{
+    font-size: 2em;
+    border-radius: 10px;
+    border: darkslategray 1px solid;
+    box-shadow: 2px 2px;
+}
+
+#numbers{
+    gap: 5px;
+    flex: 4;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+}
+
+#numbers button{
+    height: 100%;
+    align-self: center;
+    flex: 1;
+}
+
+#operators{
+    gap: 5px;
+    flex: 1;
+    display: flex;
+}
+
+#operators button{
+    flex: 1;
+}
+
+#enders{
+    gap: 5px;
+    flex: 1;
+    display: flex;
+}
+
+#enders button{
+    flex: 1;
+}
+
+#erase{
+    background-color: rgb(209, 85, 85);
+}
+
+#display{
+    padding-right: 10px;
+    text-align: right;
+    font-size: 5em;
+    font-family: "digital-clock-font";
+    height: 25%;
+    width: 100%;
+    background-color: rgb(206, 199, 199);
+    border: 1px solid black;
+}
