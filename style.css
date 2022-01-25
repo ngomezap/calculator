@@ -5,16 +5,18 @@
 }
 
 body{
-    background-color: darkturquoise;
+    background-color: rgb(121, 183, 185);
 }
 
 h1{
     font-size: 55px;
     text-align: center;
     font-family: "digital-clock-font";
+    color: white;
 }
 
 #container{
+    box-shadow: 5px 10px black;
     border-radius: 10px;
     background-color: grey;
     margin-left: auto;
@@ -27,7 +29,6 @@ h1{
     width: 400px;
     height: 60vh;
     padding: 20px;
-    box-shadow: 10px 10px;
 }
 
 #buttons{

@@ -32,6 +32,12 @@ function populate(e){
         display.textContent += e.target.innerText;
     }
     operation.previous_target = this;
+
+    //Overflow check
+    if (display.scrollWidth > display.offsetWidth) {
+        display.textContent = 'ERROR';
+        operation.eraseNext = 1;
+    }
 }
 
 function store(e){
@@ -61,8 +67,12 @@ function store(e){
 
 function displayResult(){
     let result;
+    if(parseInt(display.textContent) === NaN){
+        return
+    }
     if(operation.num2 === null){
-        if(operation.previous_target === equal || display.textContent.charAt(0) === "."){
+        if(operation.previous_target === equal || display.textContent.charAt(0) === "." ||
+        display.textContent === ""){
             return
         }else{
             operation.num2 = parseFloat(display.textContent);
@@ -78,6 +88,15 @@ function displayResult(){
         result = operate(operation);
         display.textContent = result;
         operation.previous_target = "=";
+    }
+    //Overflow check
+    if (display.scrollWidth > display.offsetWidth) {
+        display.textContent = 'ERROR';
+        operation.eraseNext = 1;
+        operation.num1 = null;
+        operation.num2 = null;
+        operation.operator = null;
+        operation.previous_operator = null;
     }
 }
 
@@ -129,6 +148,8 @@ function click(e){
         erase.click();
     }else if(e.key === "*"){
         operators.item(2).click()
+    }else if(e.key === "/"){
+        operators.item(3).click()
     }
 }
 
